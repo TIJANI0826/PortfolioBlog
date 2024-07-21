@@ -1,11 +1,11 @@
 from django import forms 
-from tinymce import TinyMCE 
-from projects.models import Projects 
+from tinymce.widgets import TinyMCE
+from projects.models import Projects,Participant
 
 
 class TinyMCEWidget(TinyMCE):
     def use_required_attribute(self, *args):
-    return False
+        return False
 
 
 class ProjectForm(forms.ModelForm):
@@ -14,4 +14,12 @@ class ProjectForm(forms.ModelForm):
     class Meta:
         model = Projects
         fields = '__all__'
+
+
+
+class ParticipantForm(forms.ModelForm):
+    class Meta:
+        model = Participant
+        fields = ['name', 'email', 'phone']
+
 

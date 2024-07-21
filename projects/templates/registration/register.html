@@ -1,0 +1,162 @@
+{% load static %}
+<!doctype html>
+<html lang="zxx">
+
+<head><!-- metas -->
+    <meta charset="utf-8">
+    <meta name="author" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <!-- title -->
+    <title>Coursy – Bootstrap 5 Online Courses Template</title>
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="{% static 'assets/img/mylogo.png' %}">
+    <!-- CSS Template -->
+    <link href="{% static 'assets/css/style.css' %}" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Skippy & Prload --><!-- skippy -->
+    <a id="skippy" class="skippy visually-hidden-focusable overflow-hidden" href="#content">
+        <div class="container"><span class="u-skiplink-text">Skip to main content</span></div>
+    </a><!-- End skippy --><!-- Preload -->
+    <div id="loading" class="loading-preloader">
+        <div class="spinner-border text-primary" role="status"><span class="visually-hidden">Loading...</span></div>
+    </div><!-- End Preload --><!-- Edn Skippy & Prload --><!-- 
+    ========================
+        Wrapper 
+    ========================
+    -->
+    <div class="wrapper">
+        <div class="header-height-bar"></div><!-- Header -->
+        <header class="main-header main-header-01 headroom navbar-light bg-white header-height fixed-top">
+            <nav class="navbar navbar-expand-lg">
+                <div class="container">
+                    <!-- Logo --> 
+                    <a class="navbar-brand header-navbar-brand"
+                        href="/"><img class="logo-dark" src="{% static 'assets/img/MyTextLogo2.png' %}" title="" alt=""> 
+                        <img class="logo-light" src="{% static 'assets/img/MyTextLogo2.png' %}" title="" alt="">
+                    </a>
+                    <!-- Logo -->
+                    <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar2"
+                        aria-labelledby="offcanvasNavbar2Label">
+                        <div class="offcanvas-header">
+                            <div class="offcanvas-title" id="offcanvasNavbar2Label"><img class="logo-dark"
+                                    src="{% static 'assets/img/MyTextLogo2.png' %}" title="" alt="">
+                            </div>
+                            <button type="button"
+                                class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close">
+                            </button>
+                        </div>
+                        <div class="offcanvas-body">
+                           
+                        </div>
+                    </div>
+                    <div class="header-right ms-auto">
+                       <!-- <div class="hr-nav-item h-btn">
+                    <a href="#" class="header-btn">Sign In</a>
+                </div> -->
+                        
+                    </div>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
+                        data-bs-target="#offcanvasNavbar2" aria-controls="offcanvasNavbar2"><span
+                            class="toggler-icon"></span>
+                    </button>
+                    <div class="collapse header-search shadow-lg" id="header_search">
+                        
+                    </div>
+                </div>
+            </nav>
+        </header><!-- End Header --><!-- Main -->
+        <main class="bg-gray-100">
+            <div class="section">
+                <div class="container">
+                    <div class="card shadow-lg">
+                        <div class="card-body p-xxl-10 p-lg-8 p-4">
+                            <div class="row justify-content-center">
+                                {% if error %}
+                                <p style="color: red;">{{ error }}</p>
+                                {% endif %}
+                                <form class="col-md-6 col-xxl-5" method="post">
+                                    {% csrf_token %}
+                                    <div>
+                                        <h5 class="h4 mb-5">Register for Python Coding Class</h5>
+                                        <div class="form-floating mb-3">
+                                            <input type="text" class="form-control"
+                                                placeholder="name@example.com"  name="name" maxlength="100" required id="id_name"> <label
+                                                for="id_name">Your Name</label></div>
+                                        <div class="form-floating mb-3"><input type="email" class="form-control"
+                                                 placeholder="name@example.com" name="email" maxlength="254" required id="id_email"> <label
+                                                for="id_email">Email address</label></div>
+                                        <div class="form-floating mb-3"><input class="form-control"
+                                            type="text" name="phone" placeholder="Phone Number" maxlength="15" required id="id_phone"> <label
+                                                for="id_phone">Phone Number</label>
+                                        </div>
+                                        <div class="form-floating mb-3">
+                                            <button type="submit" class="btn btn-primary w-100">Register</button>
+                                        </div>
+                                    </div>
+                                </form>
+                               
+                                <div
+                                    class="col-md-6 col-xxl-7 d-none d-md-flex align-items-center justify-content-center px-md-5 px-xxl-8">
+                                    <img src="{% static 'assets/img/login-bg.svg' %}" title="" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main><!-- End Main --><!-- Footer -->
+        <footer class="bg-dark footer">
+           
+            <div class="footer-bottom small py-3 border-top border-white border-opacity-10">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6 text-center text-md-start py-1">
+                            <p class="m-0 text-white text-opacity-75">© 2023 copyright by PyTechMentors</p>
+                        </div>
+                        <div class="col-md-6 text-center text-md-end py-1">
+                            <ul
+                                class="nav justify-content-center justify-content-md-end list-unstyled footer-link-01 m-0">
+                                <li class="p-0 mx-3 ms-md-0 me-md-3"><a href="#"
+                                        class="text-white text-opacity-75">Privace &amp; Policy</a></li>
+                                <li class="p-0 mx-3 ms-md-0 me-md-3"><a href="#"
+                                        class="text-white text-opacity-75">Faq's</a></li>
+                                <li class="p-0 mx-3 ms-md-0 me-md-3"><a href="#" class="text-white text-opacity-75">Get
+                                        a Quote</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer><!-- End Footer -->
+    </div><!-- 
+    ========================
+       End Wrapper 
+    ========================
+            <!-- script start -->
+    <!--bootstrap-->
+    <script src="{% static 'assets/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+    <!-- headroom JS -->
+    <script src="{% static 'assets/vendor/headroom/headroom.min.js' %}"></script>
+    <!-- swiper JS -->
+    <script src="{% static 'assets/vendor/swiper/swiper-bundle.min.js' %}"></script>
+    <!-- magnific JS -->
+    <!-- <script src="{% static 'assets/vendor/magnific/jquery.magnific-popup.min.js' %}"></script> -->
+    <!-- magnific JS -->
+    <script src="{% static 'assets/vendor/purecounter/purecounter_vanilla.js' %}"></script>
+    <!-- working form -->
+    <!-- <script src="{% static 'assets/vendor/mail/js/form.min.js' %}"></script>
+            <script src="{% static 'assets/vendor/mail/js/script.js' %}"></script> -->
+    <!-- Theme JS -->
+    <script src="{% static 'assets/js/theme.js' %}"></script>
+    <script src="{% static 'assets/js/jquery-3.5.1.min.js' %}"></script>
+    <script src="{% static 'assets/js/theme-jquery.js' %}"></script>
+    <!-- End script start -->
+</body>
+<!-- Mirrored from pxdraft.com/wrap/coursy/account-signup.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 21 Jul 2024 12:56:40 GMT -->
+
+</html>

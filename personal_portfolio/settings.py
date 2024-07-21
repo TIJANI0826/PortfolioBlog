@@ -11,7 +11,12 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 
 from pathlib import Path
-
+import django
+from django.utils.encoding import force_str
+django.utils.encoding.force_text = force_str
+from django.utils.translation import gettext, gettext_lazy
+django.utils.translation.ugettext = gettext
+django.utils.translation.ugettext_lazy = gettext_lazy
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve(strict=True).parent.parent
 
@@ -144,8 +149,24 @@ USE_L10N = True
 
 USE_TZ = True
 
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
+MEDIA_URL = '/media/'
+MEDIA_ROOT = BASE_DIR / 'media'
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = 'ibrahimtijani08@gmail.com'
+EMAIL_HOST_PASSWORD = 'busozujstdszfurp'
+EMAIL_USE_SSL = False
+
+PAYSTACK_PUBLIC_KEY = "pk_live_402c3cd3b991e90143c31bcd119f214e49b53280"
+# PAYSTACK_PUBLIC_KEY = 'pk_test_8cb6f341a2e78d65c6cbf23b05f253ef0c53f1e3'
+# PAYSTACK_SECRET_KEY = 'sk_test_a6be918bcf48bb742c66a133101a8eee69032999'
+PAYSTACK_SECRET_KEY = "sk_live_ed5adf0fef92b2067a3ad76255ce5c1a51f7c6a4"
