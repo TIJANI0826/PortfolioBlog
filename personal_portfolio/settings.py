@@ -30,7 +30,7 @@ SECRET_KEY = '9aa%6@h(rnq@)0-4%8(odirmik4zmp9l$!ay&v+a7uzzgby#!-'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['tjib.pythonanywhere.com', '127.0.0.1']
 
 
 # Application definition
