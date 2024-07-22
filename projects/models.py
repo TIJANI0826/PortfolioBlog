@@ -5,7 +5,7 @@ class Projects(models.Model):
     title = models.CharField(max_length=100)
     description = HTMLField()
     technology = models.CharField(max_length=20)
-    image = models.FilePathField(path="image/projects")
+    # image = models.FilePathField(path="image/projects")
 
 
 class Participant(models.Model):
