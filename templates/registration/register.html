@@ -15,6 +15,15 @@
     <link rel="shortcut icon" href="{% static 'assets/img/mylogo.png' %}">
     <!-- CSS Template -->
     <link href="{% static 'assets/css/style.css' %}" rel="stylesheet">
+    <style>
+        .week-schedule {
+            display: none;
+        }
+        .schedule-button {
+            cursor: pointer;
+            color: #007bff;
+        }
+    </style>
 </head>
 
 <body>
@@ -71,8 +80,14 @@
             </nav>
         </header><!-- End Header --><!-- Main -->
         <main class="bg-gray-100">
+           
             <div class="section">
                 <div class="container">
+                    <div class="card shadow-lg">
+                        <div class="card-body p-xxl-10 p-lg-8 p-4">
+                            {% include 'registration/table_schedule.html' %}
+                        </div>
+                    </div>
                     <div class="card shadow-lg">
                         <div class="card-body p-xxl-10 p-lg-8 p-4">
                             <div class="row justify-content-center">
@@ -155,6 +170,32 @@
     <script src="{% static 'assets/js/theme.js' %}"></script>
     <script src="{% static 'assets/js/jquery-3.5.1.min.js' %}"></script>
     <script src="{% static 'assets/js/theme-jquery.js' %}"></script>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script>
+    document.getElementById('toggleSchedule').addEventListener('click', function() {
+        const schedule = document.getElementById('schedule');
+        if (schedule.style.display === 'none' || schedule.style.display === '') {
+            schedule.style.display = 'block';
+        } else {
+            schedule.style.display = 'none';
+        }
+    });
+
+    document.querySelectorAll('.schedule-button').forEach(button => {
+        button.addEventListener('click', function() {
+            const target = this.getAttribute('data-target');
+            const element = document.querySelector(target);
+            if (element.style.display === 'none' || element.style.display === '') {
+                element.style.display = 'table-row-group';
+            } else {
+                element.style.display = 'none';
+            }
+        });
+    });
+</script>
     <!-- End script start -->
 </body>
 <!-- Mirrored from pxdraft.com/wrap/coursy/account-signup.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 21 Jul 2024 12:56:40 GMT -->
